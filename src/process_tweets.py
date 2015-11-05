@@ -1,19 +1,10 @@
 import json
 import string
 
+############################## Globals ######################################
 no_escape_ascii = string.printable[:-5]
 
-
-def clean_tweet(tweet_text):
-    r = filter(lambda x: x in no_escape_ascii, tweet_text)
-    clean_tweet = ''.join(list(r))
-    return{'clean_tweet': clean_tweet, 'unicode': int(clean_tweet != tweet_text)}
-
-
-def clean_created_at(created_at):
-    return '(timestamp: ' + created_at + ')'
-
-
+################################ File Handling ################################ 
 def output_file(list_of_tweets, uni_count, non_valid_count):
     with open('../tweet_output/ft1.txt', 'w') as outfile:
         for tweet in list_of_tweets:
@@ -32,6 +23,16 @@ def input_file(filename):
     return tweets
 
 
+############################## Json Handling and Cleaning ####################
+def clean_tweet(tweet_text):
+    r = filter(lambda x: x in no_escape_ascii, tweet_text)
+    clean_tweet = ''.join(list(r))
+    return{'clean_tweet': clean_tweet, 'unicode': int(clean_tweet != tweet_text)}
+
+def clean_created_at(created_at):
+    return '(timestamp: ' + created_at + ')'
+
+############################### Main Function ###############################
 def open_and_process(filename):
     tweet_list = []
     non_ascii_count = 0
@@ -52,4 +53,4 @@ def open_and_process(filename):
     output_file(tweet_list, non_ascii_count, non_valid_count)
 
 if __name__ == "__main__":
-    open_and_process('../tweet_input/tweets2.txt')
+    open_and_process('../tweet_input/tweets3.txt')
