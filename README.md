@@ -1,9 +1,9 @@
-# Insight Data Engineering Code Challenge
+#Insight Data Engineering Code Challenge
 -Execute by running the script run.sh
 
 -Main files were coded and tested in Python 3.4.3.
 
--Python Libraries used include standard library time, json, itertools, re and string. Networkx library 1.9 for python 3 is also used which is not in the standard library
+-Python Libraries used include standard library time, json, itertools, re and string. Networkx library 1.9 for python 3 was also used which is not in the standard library
 
 -Code challenge feature 1 is handled by process_tweets.py and feature 2 is handled by average_degree.py. Both files read from tweet2.txt or tweet3.txt which follow the formatting specified in the code challenge summary.
 
