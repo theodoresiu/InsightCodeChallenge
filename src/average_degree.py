@@ -32,15 +32,24 @@ def remove_outdated(G, current_time):
     for edge in G.edges(data=True):
         if (current_time - edge[2]['created_at']) > 60:
             G.remove_edge(*edge[:2])
-
     return G
 
-def get_average_degree(G):
+#Old averaging method which took disconnected nodes in avg
+def get_average_degree_old_version(G):
     if len(G) == 0:
         return 0
     else:
         s = sum(G.degree(G.nodes()).values())
         return s / len(G)
+
+#New averaging method which does not include disconnected nodes in avg
+def get_average_degree(G):    
+    s = G.degree(G.nodes()).values()
+    total=sum(s)
+    if G and total!=0:
+        return total/sum(x > 0 for x in s)
+    else:
+        return 0
 
 ########################## Main Functions ###################################
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 # This script runs the Insight Data Engineering Code Challenge
 # Outputs are found in the tweet_output file in ft1.txt and ft2.txt
   
