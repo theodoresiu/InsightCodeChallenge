@@ -5,7 +5,7 @@
 
 -Python Libraries used include standard library time, json, itertools, re and string. Networkx library 1.9 for python 3 was also used which is not in the standard library
 
--Code challenge feature 1 is handled by src/process_tweets.py and feature 2 is handled by src/average_degree.py. Both files read from tweet_input/tweet2.txt or tweet_inpu/tweet3.txt which follow the formatting specified in the code challenge summary. 
+-Code challenge feature 1 is handled by src/process_tweets.py and feature 2 is handled by src/average_degree.py. Both files read from tweet_input/tweet2.txt or tweet_inpu/tweet3.txt which follow the formatting specified in the code challenge summary. Outputs are written in the folder tweet_output as ft1.txt and ft2.txt.
 
 -In the tweets.txt test file provided there were situations where the 'text' field or the 'created_at' field was not specified in a json dictionary. If either fields were missing, the tweets were counted to be invalid and were simply discarded. We account for these invalid json dictionaries in process_tweets.py by noting them in bottom of ft1.txt. 
 
